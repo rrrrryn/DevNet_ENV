@@ -4,7 +4,6 @@
 ``` sudo apt install -y ansible ```
 ## 2. clone this repo
 ```
-# cd to your workspace first
 git clone https://github.com/rrrrryn/DevNet_ENV.git
 ```
 
