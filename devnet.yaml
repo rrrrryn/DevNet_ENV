@@ -1,0 +1,34 @@
+- name: Setup DevNent ENV
+  hosts: localhost
+  tasks:
+
+  - name: Install venv
+    shell: |
+        sudo apt-get update
+        sudo apt-get -y install python3-venv
+
+  - name: Install postman
+    shell:
+        sudo snap install postman
+
+  - name: Install ngrok
+    shell:
+        sudo snap install ngrok
+
+  - name: Install atom
+    shell:
+        sudo snap install atom --classic
+
+  - name: Clone code
+    shell: |
+        mkdir ~/code
+        cd ~/code
+        git clone https://github.com/CiscoDevNet/dne-dna-code
+
+  - name: Setup venv env
+    shell: |
+        cd ~/code/dne-dna-code
+        . venv/bin/activate
+        python3 -m venv venv
+        pip install --upgrade pip
+        pip install -r requirements.txt
